@@ -14,17 +14,9 @@ aws cloudformation deploy \
 
 Template has been created based on [https://github.com/aws-samples/data-pipeline-samples](https://github.com/aws-samples/data-pipeline-samples)
 
-In case of error like 
+In case of error: 
 > Pipeline Definition failed to validate because of following Errors: [{ObjectId = 'NameEmrCluster', errors = 
 [Invalid role 'DataPipelineDefaultRole' in slot 'role'. Please make sure that the role exist and Data Pipeline 
 has permission to assume the role.
 
-deploy role template first:
-```sh
-aws cloudformation deploy \
-  --template-file template.yml \
-  --stack-name datapipeline-role \
-  --template role-template.yml \
-  --capabilities CAPABILITY_NAMED_IAM \
-  --profile cloud-formation@flowlab-development
-```
+deploy [role template](../datapipeline-default-role) first.
