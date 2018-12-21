@@ -9,7 +9,7 @@ aws cloudformation deploy \
   --stack-name dynamodb-to-dynamodb-datapipeline \
   --parameter-overrides SourceTableName=<source-table-name> DestinationTableName=<destination-table-name> \
   --template datapipeline-template.yml \
-  --profile cloud-formation@flowlab-development
+  --profile cloudformation@flowlab-development
 ```
 
 Template has been created based on [https://github.com/aws-samples/data-pipeline-samples](https://github.com/aws-samples/data-pipeline-samples)

@@ -9,5 +9,5 @@ aws cloudformation deploy \
   --stack-name datapipeline-role \
   --template role-template.yml \
   --capabilities CAPABILITY_NAMED_IAM \
-  --profile cloud-formation@flowlab-development
+  --profile cloudformation@flowlab-development
 ```

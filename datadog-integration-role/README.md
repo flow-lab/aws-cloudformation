@@ -8,5 +8,5 @@ aws cloudformation create-stack --stack-name datadog-integration-role \
   --template-body file://integration-role/integration-role.yml \
   --parameters ParameterKey=ExternalID,ParameterValue="AWS External ID" \
   --capabilities CAPABILITY_NAMED_IAM \
-  --profile cloud-formation@flowlab-development
+  --profile cloudformation@flowlab-development
 ```
