@@ -11,4 +11,4 @@ bucket as a temporal storage
 
 4. [concourse-secretsmanager-role](./concourse-secretsmanager-role) - [Concourse - Credential Management](https://concourse-ci.org/creds.html#configuration)
 
-5. [flow-datapipeline)](./flow-datapipeline) - Runs [flow](https://github.com/flow-lab/flow) cli
+5. [flow-datapipeline](./flow-datapipeline) - Runs [flow](https://github.com/flow-lab/flow) cli
