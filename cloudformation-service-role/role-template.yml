@@ -19,7 +19,7 @@ Resources:
       Path: /
       Policies:
         - PolicyName: !Sub cloudformation-policy
-          PolicyDocument: !Sub |
+          PolicyDocument: |
             {
                 "Version": "2012-10-17",
                 "Statement": [{
