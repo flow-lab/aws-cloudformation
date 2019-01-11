@@ -7,7 +7,7 @@ To deploy using aws cli:
 aws cloudformation deploy \
     --template-file template.yml \
     --stack-name flow-tooling \
-    --parameter-overrides FlowCommand="AWS_REGION=eu-west-1 flow dynamodb purge --table-name test" \
+    --parameter-overrides FlowVersion="v0.1.51" FlowCommand="AWS_REGION=eu-west-1 flow dynamodb purge --table-name test" \
     --template datapipeline-template.yml \
     --profile cloudformation@flowlab-development
 ```

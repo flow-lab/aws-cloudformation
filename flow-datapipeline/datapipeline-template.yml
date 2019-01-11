@@ -16,6 +16,11 @@ Parameters:
     Description: Flow command to execute
     Default: "flow --version"
 
+  FlowVersion:
+    Type: String
+    Description: Flow version
+    Default: "latest"
+
   InstanceType:
     Type: String
     Description: Instance type for ec2
@@ -83,7 +88,7 @@ Resources:
             - Key: "type"
               StringValue: "ShellCommandActivity"
             - Key: "command"
-              StringValue: "(curl https://raw.githubusercontent.com/flow-lab/flow/master/bin/get-latest.sh --output get-latest.sh --fail) && (chmod +x get-latest.sh) && (./get-latest.sh && sudo mv flow /usr/bin)"
+              StringValue: !Sub "(curl https://raw.githubusercontent.com/flow-lab/flow/master/bin/get-flow.sh --output get-flow.sh --fail) && (chmod +x get-flow.sh) && (./get-flow.sh $FlowVersion && sudo mv flow /usr/bin)"
 
         - Id: "ExecuteFlow"
           Name: "ExecuteFlow"
