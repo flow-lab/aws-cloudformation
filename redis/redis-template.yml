@@ -11,9 +11,6 @@ Parameters:
     Type: String
     Description: Instance type for cluster
     Default: "cache.t2.micro"
-  PreferredAvailabilityZones:
-    Type: CommaDelimitedList
-    Default: "eu-west-1a"
 
 Resources:
   Cluster:
@@ -23,4 +20,3 @@ Resources:
       CacheNodeType: !Ref InstanceType
       Engine: "redis"
       NumCacheNodes: !Ref NumCacheNodes
-      PreferredAvailabilityZones: !Ref PreferredAvailabilityZones
