@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: |
+  Elastic cache redis cluster
+
+Parameters:
+  NumCacheNodes:
+    Type: Number
+    Description: The number of nodes
+    Default: 1
+  InstanceType:
+    Type: String
+    Description: Instance type for cluster
+    Default: "cache.t2.micro"
+  PreferredAvailabilityZones:
+    Type: CommaDelimitedList
+    Default: "eu-west-1a"
+
+Resources:
+  Cluster:
+    Type: AWS::ElastiCache::CacheCluster
+    Properties:
+      AZMode: "cross-az"
+      CacheNodeType: !Ref InstanceType
+      Engine: "redis"
+      NumCacheNodes: !Ref NumCacheNodes
+      PreferredAvailabilityZones: !Ref PreferredAvailabilityZones

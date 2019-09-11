@@ -16,3 +16,5 @@ bucket as a temporal storage
 6. [flow-datapipeline](./flow-datapipeline) - Runs [flow](https://github.com/flow-lab/flow) cli
 
 7. [s3-encyrption-custom-master-key](./s3-encyrption-custom-master-key) - Turn on KMS encryption on s3 by default with custom KMS Customer Master Key
+
+8. [redis](./redis) - ElasticCache redis cluster
