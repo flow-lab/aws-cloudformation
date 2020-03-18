@@ -11,7 +11,7 @@ Resources:
   DatadogAWSIntegrationRole:
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: DatadogAWSIntegrationRole
+      RoleName: datadog-integration-role
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
@@ -30,6 +30,7 @@ Resources:
         Version: 2012-10-17
         Statement:
           - Action:
+            - 'apigateway:GET'
             - 'autoscaling:Describe*'
             - 'budgets:ViewBudget'
             - 'cloudfront:GetDistributionConfig'
@@ -66,9 +67,6 @@ Resources:
             - 'lambda:GetPolicy'
             - 'lambda:List*'
             - 'lambda:RemovePermission'
-            - 'logs:Get*'
-            - 'logs:Describe*'
-            - 'logs:FilterLogEvents'
             - 'logs:TestMetricFilter'
             - 'logs:PutSubscriptionFilter'
             - 'logs:DeleteSubscriptionFilter'
@@ -88,12 +86,16 @@ Resources:
             - 'sns:List*'
             - 'sns:Publish'
             - 'sqs:ListQueues'
+            - 'states:ListStateMachines'
+            - 'states:DescribeStateMachine'
             - 'support:*'
             - 'tag:GetResources'
             - 'tag:GetTagKeys'
             - 'tag:GetTagValues'
-        Effect: 'Allow'
-        Resource: '*'
+            - 'xray:BatchGetTraces'
+            - 'xray:GetTraceSummaries'
+            Effect: 'Allow'
+            Resource: '*'
       Path: /
       Roles:
       - !Ref DatadogAWSIntegrationRole
