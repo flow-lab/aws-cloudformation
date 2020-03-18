@@ -91,9 +91,9 @@ Resources:
             - 'support:*'
             - 'tag:GetResources'
             - 'tag:GetTagKeys'
-            - 'tag:GetTagValues- '
-          Effect: Allow
-          Resource: '*'
+            - 'tag:GetTagValues'
+        Effect: 'Allow'
+        Resource: '*'
       Path: /
       Roles:
       - !Ref DatadogAWSIntegrationRole
